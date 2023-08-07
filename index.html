@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .button-container {
+        display: flex;
+        justify-content: space-around;
+        gap: 100px;
+        position: absolute;
+        left: 25%;
+        top: 5%;
+      }
+
+      .button-ecommerce {
+        display: none;
+        justify-content: space-around;
+        position: absolute;
+        left: 20%;
+        top: 202%;
+      }
+
+      .button {
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        display: inline-block;
+        position: relative;
+        font-weight: bold;
+        border-color: transparent;
+        background-color: transparent;
+      }
+
+      .button:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: black;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .button:hover:after,
+      .button.clicked:after {
+        width: 100%;
+        left: 0;
+      }
+
+      .button-1 {
+        opacity: 100%;
+        position: absolute;
+        left: 30%;
+        margin-top: 20px;
+        padding: 8px 25px;
+      }
+
+      .button-2 {
+        opacity: 100%;
+        position: absolute;
+        left: 55%;
+        margin-left: 2px;
+        margin-top: 20px;
+        padding: 8px 20px;
+      }
+
+      .button-3 {
+        opacity: 100%;
+        position: absolute;
+        left: 42%;
+        margin-left: 10px;
+        margin-top: 20px;
+        padding: 8px 20px;
+      }
+
+      .button-4 {
+        opacity: 100%;
+        position: absolute;
+        left: 70%;
+        margin-top: 20px;
+        padding: 8px 18px;
+      }
+
+      .button-5 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        margin-left: 130px;
+        margin-top: 89%;
+        padding: 150px 80px;
+      }
+
+      .show-whitechoco {
+        margin-top: 50%;
+      }
+      .show-whitechoco2 {
+        margin-top: 80%;
+      }
+
+      .button-6 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        left: 20%;
+        margin-left: 135px;
+        margin-top: 89%;
+        padding: 150px 105px;
+      }
+      .show-greentea {
+        margin-top: 50%;
+      }
+
+      .button-7 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        left: 42%;
+        margin-left: 135px;
+        margin-top: 89%;
+        padding: 150px 87px;
+      }
+      .show-milkchoco {
+        margin-top: 50%;
+      }
+      .show-milkchoco2 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        left: 42%;
+        margin-left: 135px;
+        margin-top: 50%;
+        padding: 150px 85spx;
+      }
+
+      .button-8 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        left: 62%;
+        margin-left: 135px;
+        margin-top: 89%;
+        padding: 150px 95px;
+      }
+      .show-darkchoco {
+        margin-top: 50%;
+      }
+
+      .button-9 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        margin-left: 135px;
+        margin-top: 50%;
+        padding: 150px 110px;
+      }
+      .button-10 {
+        opacity: 100%;
+        position: absolute;
+        left: 82%;
+        margin-top: 20px;
+        padding: 8px 18px;
+        border-radius: 30px;
+        color: #765827;
+        border-color: #765827;
+        border-width: 2px;
+      }
+      .show-milkcoffe {
+        left: 42%;
+      }
+      .show-milkcoffe2 {
+        left: 20%;
+        padding: 150px 110px;
+      }
+      .show-milkcoffe3 {
+        margin-left: 130px;
+        padding: 150px 125px;
+      }
+      .show-milkcoffe4 {
+        margin-top: 100%;
+      }
+      .show-milkcoffe5 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        margin-left: 130px;
+        margin-top: 50%;
+        padding: 150px 100px;
+      }
+      .show-milkcoffe6 {
+        opacity: 0;
+        background-color: wheat;
+        position: absolute;
+        left: 62%;
+        margin-left: 135px;
+        margin-top: 50%;
+        padding: 150px 110px;
+      }
+      .customdarkchoco {
+        margin-top: 60%;
+      }
+
+      /* Hide other images initially */
+      #tentangkita,
+      #ourProduct,
+      #kontak,
+      #whitechoco,
+      #greentea,
+      #milkchoco,
+      #darkchoco,
+      #milkcoffe {
+        display: none;
+      }
+    </style>
+    <title>CHOCOLAJIT</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <button class="button button-1" onclick="showHomePage()">
+          Beranda
+        </button>
+        <button class="button button-2" onclick="showTentangKita()">
+          Tentang Kita
+        </button>
+        <button class="button button-3" onclick="showProduk()">Produk</button>
+        <button class="button button-4" onclick="showkontak()">Kontak</button>
+        <button class="button button-10">Beli Disini!</button>
+        <button
+          id="button-5"
+          class="button button-5"
+          onclick="showWhiteChoco()"
+          disabled
+        >
+          White Choco
+        </button>
+        <button
+          id="button-6"
+          class="button button-6"
+          onclick="showGreenTea()"
+          disabled
+        >
+          Green Tea
+        </button>
+        <button
+          id="button-7"
+          class="button button-7"
+          onclick="showMilkChoco()"
+          disabled
+        >
+          Milk Choco
+        </button>
+        <button
+          id="button-8"
+          class="button button-8"
+          onclick="showdarkchoco()"
+          disabled
+        >
+          Dark Choco
+        </button>
+        <button
+          id="button-9"
+          class="button button-9"
+          onclick="showmilkcoffe()"
+          disabled
+        >
+          Milk Coffe
+        </button>
+      </div>
+
+      <div class="button-ecommerce" id="buttonEcommerce">
+        <a href="https://www.facebook.com/chocolajit" target="_blank">
+          <button class="button" style="margin-right: 100px">FACEBOOK</button>
+        </a>
+        <a
+          href="https://shopee.co.id/Mykonos-Caramel-Fudge-Cookie-EDP-50-ML-i.146082540.22322576144" target="_blank"
+        >
+          <button class="button" style="margin-right: 100px">TIKTOKSHOP</button>
+        </a>
+        <a
+          href="https://www.tiktok.com/@chocolajitofficialone?_t=8X46nIHvL5l"
+          target="_blank"
+        >
+          <button class="button" style="margin-right: 100px">LAZADA</button>
+        </a>
+        <a
+          href="https://www.lazada.co.id/shop/chocolajitstore/?path=index.htm"
+          target="_blank"
+        >
+          <button class="button" style="margin-right: 100px">TOKOPEDIA</button>
+        </a>
+        <a href="https://shopee.co.id/serbawajit" target="_blank">
+          <button class="button" style="margin-right: 100px">SHOPEE</button>
+        </a>
+      </div>
+
+      <div class="line">
+        <img id="homePageImage" src="HOMEPAGE.png" width="100%" />
+        <img id="tentangkita" src="ABOUT US.png" width="100%" />
+        <img id="ourProduct" src="PRODUK.png" width="100%" />
+        <img id="kontak" src="KONTAK.png" width="100%" />
+      </div>
+      <img id="whitechoco" src="White Choco.png" width="100%" />
+      <img id="greentea" src="Green Tea.png" width="100%" />
+      <img id="milkchoco" src="Milk Choco.png" width="100%" />
+      <img id="darkchoco" src="Dark Choco.png" width="100%" />
+      <img id="milkcoffe" src="Milk Coffee.png" width="100%" />
+    </div>
+
+    <script>
+      function showHomePage() {
+        document.getElementById("homePageImage").style.display = "block";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("button-7").classList.add("show-milkchoco");
+        document.getElementById("button-8").classList.add("show-darkchoco");
+
+        // Enable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = false;
+        document.getElementById("button-8").disabled = false;
+        document.getElementById("button-9").disabled = true;
+
+        hideWhiteChoco();
+      }
+
+      function showTentangKita() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "block";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+        document.getElementById("button-8").disabled = true;
+        document.getElementById("button-9").disabled = true;
+
+        hideWhiteChoco();
+      }
+
+      function showProduk() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "block";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = false;
+        document.getElementById("button-8").disabled = false;
+        document.getElementById("button-9").disabled = true;
+
+        document.getElementById("button-5").classList.add("customdarkchoco");
+        document.getElementById("button-6").classList.add("customdarkchoco");
+        document.getElementById("button-7").classList.add("customdarkchoco");
+        document.getElementById("button-8").classList.add("customdarkchoco");
+      }
+
+      function showkontak() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "block";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "block";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = true;
+        document.getElementById("button-8").disabled = true;
+        document.getElementById("button-9").disabled = true;
+
+        hideWhiteChoco();
+      }
+
+      function showWhiteChoco() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "block";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = true;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = false;
+        document.getElementById("button-8").disabled = false;
+        document.getElementById("button-9").disabled = false;
+
+        document.getElementById("button-6").classList.add("show-greentea");
+        document.getElementById("button-7").classList.add("show-milkchoco2");
+        document.getElementById("button-8").classList.add("show-darkchoco");
+        document.getElementById("button-9").classList.add("show-milkcoffe5");
+      }
+      function hideWhiteChoco() {
+        document.getElementById("button-5").classList.remove("show-whitechoco");
+        document.getElementById("button-6").classList.remove("show-greentea");
+        document.getElementById("button-7").classList.remove("show-milkchoco");
+        document.getElementById("button-8").classList.remove("show-darkchoco");
+        document.getElementById("button-9").classList.remove("show-milkcoffe");
+        document.getElementById("button-9").classList.remove("show-milkcoffe2");
+        document.getElementById("button-9").classList.remove("show-milkcoffe3");
+        document.getElementById("button-9").classList.remove("show-milkcoffe4");
+        document.getElementById("button-9").classList.remove("show-milkcoffe5");
+        document.getElementById("button-9").classList.remove("show-milkcoffe6");
+        document.getElementById("button-9").classList.remove("show-milkchoco2");
+
+        document.getElementById("button-5").classList.remove("customdarkchoco");
+        document.getElementById("button-6").classList.remove("customdarkchoco");
+        document.getElementById("button-7").classList.remove("customdarkchoco");
+        document.getElementById("button-8").classList.remove("customdarkchoco");
+        document.getElementById("button-9").classList.remove("customdarkchoco");
+        document
+          .getElementById("button-9")
+          .classList.remove("show-whitechoco2");
+      }
+
+      function showGreenTea() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "block";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("button-5").classList.add("show-whitechoco");
+        document.getElementById("button-7").classList.add("show-milkchoco");
+        document.getElementById("button-8").classList.add("show-darkchoco");
+        document.getElementById("button-9").classList.add("show-milkcoffe2");
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = true;
+        document.getElementById("button-7").disabled = false;
+        document.getElementById("button-8").disabled = false;
+        document.getElementById("button-9").disabled = false;
+      }
+
+      function showMilkChoco() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "block";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("button-5").classList.add("show-whitechoco");
+        document.getElementById("button-6").classList.add("show-greentea");
+        document.getElementById("button-8").classList.add("show-darkchoco");
+        document.getElementById("button-9").classList.add("show-milkcoffe");
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = true;
+        document.getElementById("button-8").disabled = false;
+        document.getElementById("button-9").disabled = false;
+      }
+
+      function showdarkchoco() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "block";
+        document.getElementById("milkcoffe").style.display = "none";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("button-5").classList.add("show-whitechoco");
+        document.getElementById("button-6").classList.add("show-greentea");
+        document.getElementById("button-7").classList.add("show-darkchoco");
+        document.getElementById("button-9").classList.add("show-milkcoffe6");
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = false;
+        document.getElementById("button-8").disabled = true;
+        document.getElementById("button-9").disabled = false;
+      }
+
+      function showmilkcoffe() {
+        document.getElementById("homePageImage").style.display = "none";
+        document.getElementById("tentangkita").style.display = "none";
+        document.getElementById("ourProduct").style.display = "none";
+        document.getElementById("kontak").style.display = "none";
+        document.getElementById("whitechoco").style.display = "none";
+        document.getElementById("greentea").style.display = "none";
+        document.getElementById("milkchoco").style.display = "none";
+        document.getElementById("darkchoco").style.display = "none";
+        document.getElementById("milkcoffe").style.display = "block";
+        document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("button-5").classList.add("show-whitechoco");
+        document.getElementById("button-6").classList.add("show-greentea");
+        document.getElementById("button-7").classList.add("show-darkchoco");
+        document.getElementById("button-8").classList.add("show-darkchoco");
+
+        // Disable buttons
+        document.getElementById("button-5").disabled = false;
+        document.getElementById("button-6").disabled = false;
+        document.getElementById("button-7").disabled = false;
+        document.getElementById("button-8").disabled = false;
+        document.getElementById("button-9").disabled = true;
+      }
+
+      // Initially show homePageImage only
+      showHomePage();
+    </script>
+  </body>
+</html>
