@@ -203,6 +203,15 @@
         margin-top: 60%;
       }
 
+      .whitechoco-button {
+        opacity: 0;
+        position: absolute;
+        left: 51%;
+        margin-top: 33%;
+        padding: 18px 55px;
+        background-color: wheat;
+      }
+
       /* Hide other images initially */
       #tentangkita,
       #ourProduct,
@@ -269,6 +278,51 @@
         >
           Milk Coffe
         </button>
+
+        <a
+          href="https://shopee.co.id/Chocolajit-White-Choco-100g-i.57603740.5755522990?xptdk=4dd0c3a3-febb-4473-9a8e-dbf722d1ebca"
+          target="_blank"
+        >
+        <button id="whitechoco-button" class="whitechoco-button">
+          Buy WhiteChoco
+        </button>
+        </a>
+
+        <a
+          href="https://shopee.co.id/Chocolajit-Milk-Coffee-100g-i.57603740.6964973716?sp_atk=0ac1f447-36ed-433b-adbf-23109757ff2d&xptdk=0ac1f447-36ed-433b-adbf-23109757ff2d"
+          target="_blank"
+        >
+        <button id="milkcoffe-button" class="whitechoco-button">
+          Buy MilkCoffe
+        </button>
+        </a>
+
+        <a
+          href="https://shopee.co.id/Chocolajit-Greentea-Choco-100g-i.57603740.7455521509?xptdk=6467c32f-265c-4ac0-bb02-75538d5537fc"
+          target="_blank"
+        >
+        <button id="greentea-button" class="whitechoco-button">
+          Buy GreenTea
+        </button>
+        </a>
+
+        <a
+          href="https://shopee.co.id/Chocolajit-Milk-Choco-100g-i.57603740.4855524788?xptdk=1ea8c996-48f5-4980-bcda-e0f183881f61"
+          target="_blank"
+        >
+        <button id="milkchoco-button" class="whitechoco-button">
+          Buy MilkChoco
+        </button>
+        </a>
+
+        <a
+          href="https://shopee.co.id/Chocolajit-Dark-Choco-100g-i.57603740.4255525347?xptdk=c2c3c53a-aef9-4ede-b907-6c57f5754525"
+          target="_blank"
+        >
+        <button id="darkchoco-button" class="whitechoco-button">
+          Buy DarkChoco
+        </button>
+        </a>
       </div>
 
       <div class="button-ecommerce" id="buttonEcommerce">
@@ -323,6 +377,12 @@
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
 
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
+
         document.getElementById("button-7").classList.add("show-milkchoco");
         document.getElementById("button-8").classList.add("show-darkchoco");
 
@@ -348,6 +408,12 @@
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
 
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
+
         // Disable buttons
         document.getElementById("button-5").disabled = true;
         document.getElementById("button-6").disabled = true;
@@ -369,6 +435,12 @@
         document.getElementById("darkchoco").style.display = "none";
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
 
         // Disable buttons
         document.getElementById("button-5").disabled = false;
@@ -395,6 +467,12 @@
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "block";
 
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
+
         // Disable buttons
         document.getElementById("button-5").disabled = true;
         document.getElementById("button-6").disabled = true;
@@ -416,6 +494,12 @@
         document.getElementById("darkchoco").style.display = "none";
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("whitechoco-button").style.display = "block";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
 
         // Disable buttons
         document.getElementById("button-5").disabled = true;
@@ -464,6 +548,12 @@
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
 
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "block";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
+
         document.getElementById("button-5").classList.add("show-whitechoco");
         document.getElementById("button-7").classList.add("show-milkchoco");
         document.getElementById("button-8").classList.add("show-darkchoco");
@@ -488,6 +578,12 @@
         document.getElementById("darkchoco").style.display = "none";
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "block";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "none";
 
         document.getElementById("button-5").classList.add("show-whitechoco");
         document.getElementById("button-6").classList.add("show-greentea");
@@ -514,6 +610,12 @@
         document.getElementById("milkcoffe").style.display = "none";
         document.getElementById("buttonEcommerce").style.display = "none";
 
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "block";
+        document.getElementById("milkcoffe-button").style.display = "none";
+
         document.getElementById("button-5").classList.add("show-whitechoco");
         document.getElementById("button-6").classList.add("show-greentea");
         document.getElementById("button-7").classList.add("show-darkchoco");
@@ -538,6 +640,12 @@
         document.getElementById("darkchoco").style.display = "none";
         document.getElementById("milkcoffe").style.display = "block";
         document.getElementById("buttonEcommerce").style.display = "none";
+
+        document.getElementById("whitechoco-button").style.display = "none";
+        document.getElementById("milkchoco-button").style.display = "none";
+        document.getElementById("greentea-button").style.display = "none";
+        document.getElementById("darkchoco-button").style.display = "none";
+        document.getElementById("milkcoffe-button").style.display = "block";
 
         document.getElementById("button-5").classList.add("show-whitechoco");
         document.getElementById("button-6").classList.add("show-greentea");
